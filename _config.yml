@@ -104,4 +104,5 @@ theme: next
 deploy:
   type: git
   repo: git@github.com:makersy/makersy.github.io.git
+  branch: gh-pages
 

@@ -10,8 +10,8 @@ env:
   GIT_EMAIL: 1352605699@qq.com
   THEME_REPO: sanonz/hexo-theme-concise
   THEME_BRANCH: master
-  DEPLOY_REPO: sanonz/sanonz.github.io
-  DEPLOY_BRANCH: master
+  DEPLOY_REPO: makersy/makersy.github.io
+  DEPLOY_BRANCH: gh-pages
 
 jobs:
   build:
@@ -20,7 +20,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node_version: [12.x]
+        node_version: [14.x]
 
     steps:
       - name: Checkout

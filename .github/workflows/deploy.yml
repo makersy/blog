@@ -60,6 +60,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          npm init
           npm install
 
       - name: Deploy hexo

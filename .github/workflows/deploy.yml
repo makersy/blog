@@ -57,6 +57,7 @@ jobs:
           git config --global user.name $GIT_USER
           git config --global user.email $GIT_EMAIL
           cp _config.theme.yml themes/concise/_config.yml
+          cd /app
 
       - name: Install dependencies
         run: |

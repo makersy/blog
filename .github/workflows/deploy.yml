@@ -8,8 +8,6 @@ on:
 env:
   GIT_USER: makersy
   GIT_EMAIL: 1352605699@qq.com
-  # THEME_REPO: makersy/hexo-theme-concise
-  # THEME_BRANCH: master
   DEPLOY_REPO: makersy/makersy.github.io
   DEPLOY_BRANCH: gh-pages
 
@@ -25,20 +23,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      # - name: Checkout theme repo
-      #   uses: actions/checkout@v2
-      #   with:
-      #     repository: ${{ env.THEME_REPO }}
-      #     ref: ${{ env.THEME_BRANCH }}
-      #     path: themes/concise
-
-      # - name: Checkout deploy repo
-      #   uses: actions/checkout@v2
-      #   with:
-      #     repository: ${{ env.DEPLOY_REPO }}
-      #     ref: ${{ env.DEPLOY_BRANCH }}
-      #     path: .deploy_git
 
       - name: Use Node.js ${{ matrix.node_version }}
         uses: actions/setup-node@v1

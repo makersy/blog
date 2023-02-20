@@ -8,7 +8,7 @@ on:
 env:
   GIT_USER: makersy
   GIT_EMAIL: 1352605699@qq.com
-  THEME_REPO: sanonz/hexo-theme-concise
+  THEME_REPO: makersy/hexo-theme-concise
   THEME_BRANCH: master
   DEPLOY_REPO: makersy/makersy.github.io
   DEPLOY_BRANCH: gh-pages

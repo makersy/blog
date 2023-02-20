@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Coder Blog
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
-language: en
+author: makersy
+language: zh-CN
 timezone: ''
 
 # URL
@@ -98,7 +98,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: concise
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -106,4 +106,3 @@ deploy:
   type: git
   repo: git@github.com:makersy/makersy.github.io.git
   branch: gh-pages
-

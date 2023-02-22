@@ -108,6 +108,7 @@ deploy:
   branch: gh-pages
 
 # excerpt
+## depth 截断行数
 excerpt:
   depth: 4
   excerpt_excludes: []

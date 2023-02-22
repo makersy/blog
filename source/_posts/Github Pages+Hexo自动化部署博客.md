@@ -20,7 +20,8 @@ categories:
 
 **目标**
 
-- 利用 GitHub Pages + Hexo 搭建个人博客，只需提交博客 markdown 文件至 GitHub 即可触发自动化编译部署
+- 成功使用 GitHub Pages + Hexo + Github Actions 搭建个人博客
+- 只需提交博客 markdown 文件至 GitHub 即可触发自动化编译部署
 - 可以在任何环境下写博客并发表，不依赖电脑上的 Node + Hexo 环境，甚至可以全在浏览器端完成
 
 
@@ -70,14 +71,14 @@ hexo init
 
 ## 切换next主题
 
-1. 在当前目录下执行：
+首先在当前目录下执行：
+
 ```bash
 git clone https://github.com/theme-next/hexo-theme-next themes/next
 
 npm install hexo-theme-next
-```  
-
-2. 其次，修改项目根目录下的 `_config.yml` 文件，找到`theme`字段，更改为`next`即可
+```
+其次，修改项目根目录下的 `_config.yml` 文件，找到`theme`字段，更改为`next`即可。
 
 注意把 `themes/next/.git` 文件夹删除，否则 next 会被 git 视为 submodule，无法被添加到暂存区。
 
@@ -258,11 +259,13 @@ jobs:
     npm install hexo-deployer-git --save
     ```
 
-push blog项目
+3. push blog项目
 
 ## 触发部署任务
 
 写一篇文章，push 到 `blog` 仓库的 master 分支，在此仓库 Actions 页面查看当前 task。
+
+如何创建一篇文章：
 
 1. 可以在 `blog/source/_posts` 文件夹下直接写md。
 2. 也可以进入blog根目录，执行 `hexo new 文章名称`，文章会生成到`source/_posts`下。
@@ -288,14 +291,48 @@ categories:
 
 ## 用Vercel加速Pages服务
 
+目前没用，先记录着
+
 https://wiki-power.com/%E7%94%A8Vercel%E5%8A%A0%E9%80%9FPages%E6%9C%8D%E5%8A%A1
 
 ## 首页文章截断
 
-https://chekun.me/post/hexo-excerpt/
+刚需。
+
+这个插件的作用是控制首页的文章标题和阅读全文之间展示几行正文。
+
+如果要控制正文截断位置，正常来说是通过在md文件中加入
+
+ ```md
+ <!-- more -->
+ ```
+
+ 这样太麻烦，经常忘了写。但是如果没有这个标记，hexo就会默认将全文展示在首页，且官方没有这部分功能的自定义配置。
+
+**安装步骤：**
+
+1. 到blog根目录，执行
+    ```bash
+    npm install hexo-excerpt --save
+    ```
+
+2. 还是在根目录的 `_config.yml` 文件添加：
+
+    ```yaml
+    # excerpt
+    ## depth 截断行数
+    excerpt:
+      depth: 4
+      excerpt_excludes: []
+      more_excludes: []
+      hideWholePostExcerpts: true
+    ```
+    字段具体含义见：https://github.com/chekun/hexo-excerpt
 
 # 参考
 
 - [https://segmentfault.com/a/1190000038373795](https://segmentfault.com/a/1190000038373795)
 
 - [https://losophy.github.io/post/71afd747.html](https://losophy.github.io/post/71afd747.html)
+
+- https://chekun.me/post/hexo-excerpt/

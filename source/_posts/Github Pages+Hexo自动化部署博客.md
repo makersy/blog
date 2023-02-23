@@ -7,9 +7,6 @@ categories:
 
 ---
 
-
-# Github Pages + Hexo + Github Actions自动化部署博客
-
 # 背景
 
 传统的 GitHub Pages + Hexo 搭建的博客，GitHub只保存了最终生成的部分，如静态网页等。这样做有2个缺点：
@@ -244,31 +241,14 @@ jobs:
     * jobs.{job}.steps.$.with 一个对象，调用 Action 传的参数，具体可以查看所使用 Action 的说明。
 
 
-## Hexo部署配置
-
-1. 修改`blog`项目根目录下的 `_config.yml` 文件，找到 Deployment，配置如下：
-    ```yaml
-    deploy:
-      type: git
-      repo: git@github.com:makersy/makersy.github.io.git
-      branch: gh-pages
-    ```
-    这里只需要修改`repo`为自己的地址
-2. 安装hexo-deployer-git 部署插件
-    ```bash
-    npm install hexo-deployer-git --save
-    ```
-
-3. push blog项目
-
-## 触发部署任务
-
-写一篇文章，push 到 `blog` 仓库的 master 分支，在此仓库 Actions 页面查看当前 task。
+## 写文章
 
 如何创建一篇文章：
 
 1. 可以在 `blog/source/_posts` 文件夹下直接写md。
-2. 也可以进入blog根目录，执行 `hexo new 文章名称`，文章会生成到`source/_posts`下。
+2. 也可以进入blog根目录，执行 `hexo new 文章名称`，例如`hexo new  `，文章会生成到 `source/_posts` 目录下。
+
+具体可以参考[官方文档](https://hexo.io/zh-cn/docs/writing.html)。
 
 采用方式2生成的文章会有如下的格式，Hexo会按此格式方便编译识别标题、时间、类别等，也可以自己复制。
 
@@ -285,6 +265,43 @@ categories:
 ---
 ```
 
+## 部署至GitHub Pages
+
+要让Hexo项目部署到Github Pages项目，首先需要如下配置：
+
+1. 修改`blog`项目根目录下的 `_config.yml` 文件，找到 Deployment，配置如下：
+    ```yaml
+    deploy:
+      type: git
+      repo: git@github.com:makersy/makersy.github.io.git
+      branch: gh-pages
+    ```
+    修改`repo`为自己的地址
+2. 安装 `hexo-deployer-git` 部署插件
+    ```bash
+    npm install hexo-deployer-git --save
+    ```
+
+本文主要目标是实现自动化部署，但是也可以实现常规的本地手动部署。
+
+### GitHub Actions自动化部署
+
+1. 在 `blog` 下写一篇文章（参考写文章部分），提交至 GitHub
+2. 在 `blog` Github Actions 页面查看触发的action
+
+### 本地手动部署
+
+需要本地已安装Hexo。
+
+到 `blog` 项目根目录，执行：
+
+```bash
+hexo clean
+hexo g
+hexo d
+```
+
+即可将项目部署到 `{username}.github.io` 项目
 
 
 # 扩展
@@ -295,11 +312,15 @@ categories:
 
 https://wiki-power.com/%E7%94%A8Vercel%E5%8A%A0%E9%80%9FPages%E6%9C%8D%E5%8A%A1
 
+## Next主题配置
+
+https://www.mdnice.com/writing/382af676baff4ed4ad5511074fb736da
+
 ## 首页文章截断
 
-刚需。
+懒人刚需。
 
-这个插件的作用是控制首页的文章标题和阅读全文之间展示几行正文。
+这个插件的作用是控制首页文章的**标题**和**阅读全文**之间展示几行正文。
 
 如果要控制正文截断位置，正常来说是通过在md文件中加入
 
@@ -330,6 +351,7 @@ https://wiki-power.com/%E7%94%A8Vercel%E5%8A%A0%E9%80%9FPages%E6%9C%8D%E5%8A%A1
     字段具体含义见：https://github.com/chekun/hexo-excerpt
 
 # 参考
+- [Hexo官方文档](https://hexo.io/zh-cn/docs)
 
 - [https://segmentfault.com/a/1190000038373795](https://segmentfault.com/a/1190000038373795)
 

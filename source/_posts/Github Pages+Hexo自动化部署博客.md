@@ -239,7 +239,7 @@ jobs:
 如何创建一篇文章：
 
 1. 可以在 `blog/source/_posts` 文件夹下直接写md。
-2. 也可以进入blog根目录，执行 `hexo new 文章名称`，例如`hexo new  `，文章会生成到 `source/_posts` 目录下。
+2. 也可以进入blog根目录，执行 `hexo new 文章名称`，例如`hexo new "hello world"`，文章会生成到 `source/_posts` 目录下。
 
 具体可以参考[官方文档](https://hexo.io/zh-cn/docs/writing.html)。
 

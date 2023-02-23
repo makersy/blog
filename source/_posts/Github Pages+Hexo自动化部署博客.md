@@ -46,13 +46,6 @@ brew install node
 npm install -g hexo-cli
 ```
 
-## 安装插件
-
-```bash
-npm install hexo-deployer-git --save
-```
-
-
 ## 初始化Hexo
 
 选择一个**空文件夹**用于存hexo文件以及md文件，假设是 `~/blog` 。
@@ -349,6 +342,22 @@ https://www.mdnice.com/writing/382af676baff4ed4ad5511074fb736da
       hideWholePostExcerpts: true
     ```
     字段具体含义见：https://github.com/chekun/hexo-excerpt
+
+## 自动提交脚本
+
+1. 将这个文件放到blog项目根目录
+https://raw.githubusercontent.com/makersy/blog/master/auto-push.sh
+
+2. 添加可执行权限
+```bash
+chmod a+x ./auto-push.sh
+```
+
+3. 执行脚本
+```bash
+./auto-push.sh
+```
+完成向Github的提交，以日期作为提交信息。
 
 # 参考
 - [Hexo官方文档](https://hexo.io/zh-cn/docs)

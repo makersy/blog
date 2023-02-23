@@ -51,7 +51,6 @@ npm install -g hexo-cli
 选择一个**空文件夹**用于存hexo文件以及md文件，假设是 `~/blog` 。
 
 ```bash
-
 cd ~/blog
  
 hexo init

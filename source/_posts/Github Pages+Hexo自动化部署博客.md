@@ -160,7 +160,7 @@ on:
 
 env:
   GIT_USER: makersy
-  GIT_EMAIL: 1352605699@qq.com
+  GIT_EMAIL: your-email@gmail.com
   DEPLOY_REPO: makersy/makersy.github.io
   DEPLOY_BRANCH: gh-pages
 

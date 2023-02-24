@@ -358,6 +358,11 @@ chmod a+x ./auto-push.sh
 ```
 完成向Github的提交，以日期作为提交信息。
 
+## 添加分类页和标签页
+
+见 [Hexo添加分类及标签（在Next主题下）](https://tohugo.com/2021/01/26/%E5%B7%A5%E5%85%B7%E9%85%8D%E7%BD%AE/Hexo%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE%EF%BC%88%E5%9C%A8Next%E4%B8%BB%E9%A2%98%E4%B8%8B%EF%BC%89/)
+
+
 # 参考
 - [Hexo官方文档](https://hexo.io/zh-cn/docs)
 

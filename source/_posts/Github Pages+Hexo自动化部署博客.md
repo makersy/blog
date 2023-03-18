@@ -2,8 +2,10 @@
 title: Github Pages + Hexo + Github Actions自动化部署博客
 date: 2023-02-22 00:31:25
 tags:
+- 折腾
 
 categories:
+- 折腾
 
 ---
 

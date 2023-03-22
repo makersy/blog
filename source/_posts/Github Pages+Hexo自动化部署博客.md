@@ -94,14 +94,14 @@ INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.
 
 ## 创建Github仓库
 
-需要创建2个仓库：  
-1. {username}.github.io  
+需要创建2个仓库：
+1. **{username}.github.io**
 这个仓库即 Github Pages 仓库，用来存放Hexo编译出的静态网页。  
 名称要严格按照此格式，仓库需要设置为 public，添加`gh-pages`分支。
 下图是pages相关配置：
-    ![Pages配置](http://qn.haoliny.top/mweb/16769941908560.jpg)
+  ![Pages配置](http://qn.haoliny.top/mweb/16769941908560.jpg)
 
-2. blog  
+2. **blog**
 这个仓库存放 markdown 文件、Hexo以及next主题的配置
 
 ## 部署密钥
